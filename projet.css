@@ -12,7 +12,7 @@ h1
 {
    
     
-    famille-de-polices :'Caramel',cursive ;
+    font-family :'Helvetica',cursive ;
     background: bisque;
     text-align: center;
     margin-top: 150px;
@@ -22,6 +22,7 @@ h1
     background-image: url(https://media.giphy.com/media/33JKNObAnTaWbdH1Rk/giphy.gif);
     background-position: center;
     -webkit-background-clip: text ;
+    background-clip: text;
 
 }
     
@@ -59,7 +60,7 @@ h1
 .container {
     position: absolute;
     padding: 10px;
-    left: 75% ;
+    left: 73% ;
     top: 15%;
     transform:translate(-50%, -50%)
     
@@ -118,10 +119,10 @@ transition: 5s;
 .heure {
     position: absolute;
     padding: 10px ;
-    left: 75%;
+    left: 73%;
     top: 0%;
     font-size: 25px;
     color: blanchedalmond ;
-    famille-de-polices: 'Caramel',cursive ;
+    font-family: 'Helvetica',cursive ;
 
     }

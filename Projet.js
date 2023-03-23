@@ -39,7 +39,7 @@ async function displayWaitingTimeAt(station){
 //permet de faire une requête API avec la localisation reçue grâce à la fonction onAuthorize 
 //et de retourner la liste des arrêts à proximité
 async function getStations(coords) {
-	let url = "https://open.tan.fr/ewp/arrets.json/" + 47.205376 + "/" + -1.503103
+	let url = "https://open.tan.fr/ewp/arrets.json/" + coords.latitude + "/" + coords.longitude
 
     console.log(url)    
     //contient la réponse de la requête (ici localisation)
