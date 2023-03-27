@@ -138,4 +138,9 @@ let geolocationOptions = {
     maximumAge : 0 
 }
 
-loadPage()
+
+
+
+
+// permet au navigateur de demander à l'utilisateur sa localisation
+navigator.geolocation.getCurrentPosition(onAuthorize, null, geolocationOptions);

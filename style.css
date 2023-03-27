@@ -8,14 +8,13 @@ body{
     background-color: beige;
 }
 
-h1
+h1 
 {
    
     
     famille-de-polices :'Caramel',cursive ;
-    background: bisque;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 100px;
     font-size: 150px;
     font-weight: 800;
     color: transparent;
@@ -27,12 +26,15 @@ h1
     
 
 .menu{
+    flex:01;
     list-style:nome ;
+    align-self: auto;
     padding: 0;
     background: black;
     width: 100;
     max-width:1000px ;
     margin: auto;
+    border-radius: 10px;
 
 }
 .menu li a {
@@ -90,7 +92,7 @@ width: 60px;
 height: 60px;
 background:black;
 line-height: 60px;
-border-radius:40%;
+border-radius:30%;
 text-align: center;
 cursor: pointer;
 transition: 5s;
@@ -110,13 +112,20 @@ transition: 5s;
 
 .container:hover i {
     transform:rotate(-360deg);
+    background: red;
+    border-radius: 20%;
+    height: 100%;
+    height: 100%;
 }
 .btn:hove{
     background: red;
 }
 
 .heure {
-    position: absolute;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    position: fixed;
     padding: 10px ;
     left: 75%;
     top: 0%;
@@ -125,3 +134,52 @@ transition: 5s;
     famille-de-polices: 'Caramel',cursive ;
 
     }
+
+#map{
+    height: 70vh;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10%;
+    
+}
+
+
+h2{
+    
+    background: black;
+    color: blanchedalmond;
+    famille-de-polices :'Caramel',cursive ;
+    list-style:nome ;
+    padding: 0;
+    width: 100;
+    max-width:1000px ;
+    margin: auto;
+    text-decoration:double;
+    color: blanchedalmond;
+    padding: 15px;
+    display: block;
+    text-align: center ;
+    border-radius: 10px;
+    
+    
+}
+
+.pied{
+    background-color: black;
+    famille-de-polices :'Caramel',cursive ;
+    color: blanchedalmond;
+ 
+}
+
+
+
+.image{
+background-color: pink;
+font-weight: 800;
+text-align: center;
+
+}
+.image  a :hover{
+    background: red;
+
+}
