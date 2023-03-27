@@ -34,7 +34,7 @@ async function onAuthorize(locationResult) {
 // Creer et retourne du html contenant les infos de la station
 function createArretNodeFrom(arret) {
     // création d'un "noeud liste" <li></li> qui contiendra les infos de l'arrêt
-    let arretNode = document.createElement("li")
+    let arretNode = document.createElement("h3")
     //ajout du nom de l'arrêt dans le noeud liste 
     arretNode.innerHTML += "<b>" + arret["libelle"] + "</b>"
     // permet de parcourir le tableau "arret" et de sortir les numéros de ligne de bus/trams
@@ -120,10 +120,7 @@ let geolocationOptions = {
     //dit au navigateur de garder ta position durant un temps donné (ici, 0seconde)
     maximumAge : 0 
 }
+loadPage()
 
 
 
-
-
-// permet au navigateur de demander à l'utilisateur sa localisation
-navigator.geolocation.getCurrentPosition(onAuthorize, null, geolocationOptions);

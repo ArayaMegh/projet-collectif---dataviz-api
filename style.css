@@ -6,6 +6,7 @@
 
 body{
     background-color: beige;
+    position: relative;
 }
 
 h1 
@@ -14,7 +15,7 @@ h1
     
     famille-de-polices :'Caramel',cursive ;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 200px;
     font-size: 150px;
     font-weight: 800;
     color: transparent;
@@ -26,7 +27,7 @@ h1
     
 
 .menu{
-    flex:01;
+  
     list-style:nome ;
     align-self: auto;
     padding: 0;
@@ -121,13 +122,10 @@ transition: 5s;
     background: red;
 }
 
-.heure {
-    order: 0;
-    flex: 0 1 auto;
-    align-self: auto;
-    position: fixed;
+.heu {
+    border: 0;
     padding: 10px ;
-    left: 75%;
+    left:75%;
     top: 0%;
     font-size: 25px;
     color: blanchedalmond ;
@@ -135,16 +133,16 @@ transition: 5s;
 
     }
 
-#map{
+/* #map{
     height: 70vh;
     width: 50%;
     margin: 0 auto;
     border-radius: 10%;
     
 }
+ */
 
-
-h2{
+/* h2{
     
     background: black;
     color: blanchedalmond;
@@ -163,12 +161,18 @@ h2{
     
     
 }
-
+ */
 .pied{
     background-color: black;
     famille-de-polices :'Caramel',cursive ;
     color: blanchedalmond;
- 
+   
+
+    
+    
+
+    
+    
 }
 
 
@@ -178,8 +182,47 @@ background-color: pink;
 font-weight: 800;
 text-align: center;
 
-}
-.image  a :hover{
-    background: red;
+width: 100%;
+
 
 }
+
+
+   
+
+
+ 
+.station {
+    
+    
+    column-count: 4;
+    column-width: auto;
+    background-color: beige;
+    color: black;
+    list-style:nome ;
+    align-self: auto;
+    padding: 0;
+    width: 100;
+    max-width:1000px ;
+    margin: auto;
+    border-radius: 10px;
+    display: block;
+    text-align: right 50%;
+}
+
+/* .title{
+background: black;
+color: blanchedalmond;
+famille-de-polices :'Caramel',cursive ;
+list-style:nome ;
+padding: 0;
+width: 100;
+max-width:1000px ;
+margin: auto;
+text-decoration:double;
+color: blanchedalmond;
+padding: 10px;
+display: block;
+text-align: center ;
+border-radius: 10px;
+} */

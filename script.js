@@ -27,13 +27,13 @@ setInterval(function () {
 //  cree variable map . et appelle la librerie L.map que va importe le map 
 // avec les cordone de la ville , cartier , au pays 
 
- let map = L.map("map")
+ /* let map = L.map("map")
  map.setView([47.2173, -1.5534], 15);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution:
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(map);
+  }).addTo(map); */
  //let marker = L.marker([47.2173, -1.5534]).addTo(map);
 
 // function de geolocalitation 
@@ -66,7 +66,7 @@ function error (err) {
 //fonction appelée si l'utilisateur autorise la géolocalisation du navigateur et reçoit en paramètres
 // la localisation
 
-      navigator.geolocation.watchPosition(success,error);
+      /* navigator.geolocation.watchPosition(success,error);
 
      async function success(locationResult) {
          const lati = locationResult.coords.latitude;
@@ -86,8 +86,8 @@ function error (err) {
          }else{
              alert ("votre dispositive ne permet pas la geolocalition ")
          }
-        
-     }
+         */
+    /*  }
     
 
      async function getStations(coords) {
@@ -100,4 +100,4 @@ function error (err) {
         const arrets = await response.json()
         
         return arrets 
-    } 
+    }  */
