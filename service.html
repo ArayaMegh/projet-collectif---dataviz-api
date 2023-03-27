@@ -10,22 +10,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https : //fonts.googleapis.com/css2?family= Audiowide & family= Caramel & family= Monoton & family= Sacramento & display=swap" rel="stylesheet" >
-</head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
 </head>
 <body>
-    <div class="heure">
-        <span id="time"> 00 : 00 : 00</span>
-
-    </div> 
 
 <ul class = "menu">
     <li><a href="service.html">service</a></li>
     <li><a href="#">ligne</a></li>
     <li><a href="#">horaire</a></li>
     <li><a href="#">information</a></li>
+    <div class="heure">
+        <span id="time"> 00 : 00 : 00</span>
+    </div> 
 </ul>
+    <div id="map"></div>   
     <script src="Projet.js"></script>
     <script src="script.js"></script>  
     <p id="stations"></p>
+    <p id="stationDetails" hidden></p>
 </body>
 </html>

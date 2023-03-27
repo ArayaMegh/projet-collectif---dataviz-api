@@ -10,8 +10,6 @@ body{
 
 h1
 {
-   
-    
     font-family :'Helvetica',cursive ;
     background: bisque;
     text-align: center;
@@ -31,11 +29,11 @@ h1
     list-style:nome ;
     padding: 0;
     background: black;
-    width: 100;
-    max-width:1000px ;
+    width: 90%;
     margin: auto;
 
 }
+
 .menu li a {
     text-decoration: none;
     color: blanchedalmond;
@@ -117,12 +115,19 @@ transition: 5s;
 }
 
 .heure {
-    position: absolute;
-    padding: 10px ;
-    left: 73%;
-    top: 0%;
+    float: right;
+    text-align: right;
+    padding: 10px;
     font-size: 25px;
     color: blanchedalmond ;
     font-family: 'Helvetica',cursive ;
 
-    }
+}
+
+#map { 
+    height: 400px; 
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
