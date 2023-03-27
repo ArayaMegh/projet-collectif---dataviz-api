@@ -10,37 +10,72 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https : //fonts.googleapis.com/css2?family= Audiowide & family= Caramel & family= Monoton & family= Sacramento & display=swap" rel="stylesheet" >
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+
 </head>
 <body>
 
+   
+
+<div  class = "menu">
+    <li><a href="service.html">service</a></li>
+    <li><a href="#">ligne</a></li>
+    <li><a href="#">horaire</a></li>
+    <li><a href="#">information</a></li>
+    
     <div class="heure">
         <span id="time"> 00 : 00 : 00</span>
 
     </div> 
+</div>
 
 
+<div class = " container " id="select-location">
 
-<ul class = "menu">
-    <li><a href="#">service</a></li>
-    <li><a href="#">ligne</a></li>
-    <li><a href="#">horaire</a></li>
-    <li><a href="#">information</a></li>
-</ul>
-
-<div class = " container ">
     <input type = " text " placeholder= " vous allez ou ? ">
-    <div class="btn">
-        <i class =  "fa fa-search "></i>   
+        <div class="btn">
+            <i class =  "fa fa-search "></i> 
+
     </div>
 </div>
 
 
 
     <!-- <p> être toujours informé à temps</p> -->
-    <h1> Travel time  </h1>
-    <!-- <p>de vos transports en commun</p>
-</div> -->
-     <script src="Projet.js"></script>
-     <script src="script.js"></script> 
-</body>
+<h1> Travel time  </h1>
+
+
+
+
+<h2> Votre localisation </h2>
+
+
+
+<div id="map"></div>
+<p id="stations"></p>
+    
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+    <!-- <script src="Projet.js"></script>   -->
+    <script src="script.js"></script>   
+
+</body>   
+<header>
+
+    <div class="pied">
+    <h3>APP DE TRANSPORT PUBLIC DE NANTES</h3>
+    <p>realisée par:</p>
+    <p>° Alissia</p>
+    <p>° Meghan</p>
+    <p>° Edward</p>
+    </div>
+   
+        <div class="image"</div>
+            <a href="https://adatechschool.fr/"><img src="ada-tech-school.png" alt=" ada tech school" width="200" height="60"></a>
+        
+    
+</header>
 </html>
