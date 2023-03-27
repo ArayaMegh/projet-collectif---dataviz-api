@@ -134,7 +134,7 @@ transition: 5s;
 
 .pied{
     background-color: black;
-    famille-de-polices :'Caramel',cursive ;
+    font-family :'Helvetica',cursive ;
     color: blanchedalmond;
     margin: auto;
 }
