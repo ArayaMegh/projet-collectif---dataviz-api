@@ -131,3 +131,27 @@ transition: 5s;
     margin-right: auto;
     display: block;
 }
+
+.pied{
+    background-color: black;
+    famille-de-polices :'Caramel',cursive ;
+    color: blanchedalmond;
+    margin: auto;
+}
+.image{
+background-color: pink;
+font-weight: 800;
+text-align: center;
+}
+.image  a :hover{
+    background: red;
+    margin: auto;
+}
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background-color: black;
+    text-align: center;
+}
