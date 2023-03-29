@@ -1,4 +1,4 @@
-// fuction horloge, heure
+// function horloge, heure
 
 let html = document.getElementById("time");
 

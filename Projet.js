@@ -19,22 +19,22 @@ async function onAuthorize(locationResult) {
     // qui sont à proximité de l'utilisateur et de l'afficher sur html
     for (let arret of stations){
         let stationInfo = allStations.find((element) => areStationMatching(arret, element))
-        console.log(stationInfo)
-        L.marker(stationInfo["fields"]["stop_coordinates"])
-            .on('click', (clickEvent) => displayStationDetails(stationInfo, arret))
-            .addTo(map);
-
-        // Creer le html contenant les infos de la station
-        let arretNode = createArretNodeFrom(arret)
-        document.getElementById("stations").appendChild(arretNode)
+        if (stationInfo != null) {
+            console.log(stationInfo)
+            L.marker(stationInfo["fields"]["stop_coordinates"])
+                .on('click', (clickEvent) => displayStationDetails(stationInfo, arret))
+                .addTo(map);
+    
+            // Creer le html contenant les infos de la station
+            let arretNode = createArretNodeFrom(arret)
+            document.getElementById("stations").appendChild(arretNode)
+        }
     }
 
 }
 
 function areStationMatching(station, stationInfo) {
     return stationInfo["fields"]["stop_id"] == station["codeLieu"] 
-        || stationInfo["fields"]["parent_station"] == station["codeLieu"] 
-        || stationInfo["fields"]["stop_name"] == station["libelle"]
 }
 
 // Creer et retourne du html contenant les infos de la station
@@ -68,7 +68,7 @@ async function displayStationDetails(stationInfo, arret) {
     
     let coordinates = document.createElement("p") // Créer un noeud <p></p>
     for (ligne of arret["ligne"]) {
-        coordinates.innerHTML += arret["libelle"] + ligne["numLigne"]
+        coordinates.innerHTML += "<br/>"+ arret["libelle"] + " " +ligne["numLigne"]
     }
     
     stationNode.appendChild(title)
@@ -78,10 +78,15 @@ async function displayStationDetails(stationInfo, arret) {
     console.log(tpsDattentes)
     
     let tpsDattentesNode = document.createElement("p") // Créer un noeud <p></p>
-    for (let tpsDattente of tpsDattentes) {
-        tpsDattentesNode.innerHTML += //tpsDattente["temps"]+ 
-        " sens " + tpsDattente["terminus"] + " ligne " + tpsDattente["ligne"]["numLigne"] + "<br/>"
-    }
+    tpsDattentes.forEach((tpsDattente) => {
+        let detailAttenteNode = document.createElement("p")
+        detailAttenteNode.innerHTML = "Vers " + tpsDattente["terminus"] + ", ligne " + tpsDattente["ligne"]["numLigne"] + ", dans: " + tpsDattente["temps"]
+        let seeHorairesButton = document.createElement("button")
+        seeHorairesButton.innerHTML = `<a href="horaires.html?arret=${tpsDattente["arret"]["codeArret"]}&ligne=${tpsDattente["ligne"]["numLigne"]}&sens=${tpsDattente["sens"]}">voir les horaires à l'arrêt</a>`
+
+        tpsDattentesNode.appendChild(detailAttenteNode)
+        tpsDattentesNode.appendChild(seeHorairesButton)
+    })
     stationNode.appendChild(tpsDattentesNode)
 }
 
@@ -115,7 +120,8 @@ async function loadPage() {
 
     // Chargement des stations de la tan
     let stationResults = await fetchAPI("https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_tan-arrets&q=&rows=9900")
-    allStations = stationResults["records"]
+    allStations = stationResults["records"].filter((x) => x["fields"]["location_type"] == "1")
+
     console.log(allStations)
 
     // permet au navigateur de demander à l'utilisateur sa localisation
@@ -137,7 +143,6 @@ let geolocationOptions = {
     //dit au navigateur de garder ta position durant un temps donné (ici, 0seconde)
     maximumAge : 0 
 }
+
 loadPage()
-
-
-
+//<qwsxsqqazzzzzzzzzzzzzzzzzzzzzzzsa participation de mon chat, Neo 

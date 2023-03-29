@@ -132,12 +132,41 @@ transition: 5s;
  
 #map { 
     height: 400px; 
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     display: block;
 }
 
+<<<<<<< HEAD
 footer{
     margin-top: auto;
+=======
+.pied{
+    background-color: black;
+    font-family :'Helvetica',cursive ;
+    color: blanchedalmond;
+    margin: auto;
+}
+.image{
+background-color: pink;
+font-weight: 800;
+text-align: center;
+}
+.image  a :hover{
+    background: red;
+    margin: auto;
+}
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background-color: black;
+    text-align: center;
+}
+
+.pageBody {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+>>>>>>> 567430dbcbb3342652e3239048c3ac6c2034bd4b
 }
