@@ -1,6 +1,6 @@
 *{
     padding: 0;
-    margin:0; 
+    margin:0;
 }
 
 html{
@@ -20,12 +20,12 @@ body{
     flex-direction: column;
     min-height: 100%;
     background-color: beige;
-} 
-    
+}
 
 
-h1 
-{   
+
+h1
+{
     font-family :'Helvetica',cursive ;
     text-align: center;
     margin-top: 200px;
@@ -71,7 +71,7 @@ h1
     left: 75% ;
     top: 15%;
     transform:translate(-50%, -50%)
-    
+
 }
 
 input {
@@ -138,7 +138,7 @@ input {
 
 
 /* h2{
-    
+
     background: black;
     color: blanchedalmond;
     famille-de-polices :'Caramel',cursive ;
@@ -153,8 +153,8 @@ input {
     display: block;
     text-align: center ;
     border-radius: 10px;
-    
-    
+
+
 }
  */
 
@@ -163,9 +163,9 @@ input {
     width : 90%;
     margin-left: auto;
     margin-right: auto;
-    
+
  }
- 
+
 .pied{
     background-color: black;
     font-family :'Helvetica',cursive ;
@@ -206,8 +206,8 @@ text-align: center ;
 border-radius: 10px;
 } */
 
-#map { 
-    height: 400px; 
+#map {
+    height: 400px;
     width: 100%;
     display: block;
 }
@@ -231,11 +231,33 @@ h2{
     background-color: white;
     padding: auto;
 
-    
+
 }
 
 .pageBody {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.horaireTable {
+    display: flex;
+    width: 100%;
+}
+
+.horaireTable > div {
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+.tpsDattente {
+    display: flex;
+}
+
+#stationsDetailsPassages {
+  display: flex;
+}
+
+h3 {
+  padding: 12px 0 0 0;
 }

@@ -24,7 +24,7 @@ async function onAuthorize(locationResult) {
             L.marker(stationInfo["fields"]["stop_coordinates"])
                 .on('click', (clickEvent) => displayStationDetails(stationInfo, arret))
                 .addTo(map);
-    
+
             // Creer le html contenant les infos de la station
             let arretNode = createArretNodeFrom(arret)
             document.getElementById("stations").appendChild(arretNode)
@@ -34,23 +34,23 @@ async function onAuthorize(locationResult) {
 }
 
 function areStationMatching(station, stationInfo) {
-    return stationInfo["fields"]["stop_id"] == station["codeLieu"] 
+    return stationInfo["fields"]["stop_id"] == station["codeLieu"]
 }
 
 // Creer et retourne du html contenant les infos de la station
 function createArretNodeFrom(arret) {
     // création d'un "noeud liste" <li></li> qui contiendra les infos de l'arrêt
     let arretNode = document.createElement("h3")
-    //ajout du nom de l'arrêt dans le noeud liste 
+    //ajout du nom de l'arrêt dans le noeud liste
     arretNode.innerHTML += "<b>" + arret["libelle"] + "</b>"
     // permet de parcourir le tableau "arret" et de sortir les numéros de ligne de bus/trams
     // qui sont à proximité et l'afficher sur html
     for (let ligne of arret["ligne"] ){
-        arretNode.innerHTML += "<br/>" + ligne["numLigne"] 
+        arretNode.innerHTML += "<br/>" + ligne["numLigne"]
     }
     //permet de cliquer sur un arrêt et de voir le temps d'attente à l'arrêt sélectionné
     //qui est à proximité (dans la console)
-    arretNode.addEventListener("click", async () => await displayWaitingTimeAt(arret))  
+    arretNode.addEventListener("click", async () => await displayWaitingTimeAt(arret))
     return arretNode
 }
 
@@ -58,35 +58,43 @@ function createArretNodeFrom(arret) {
 async function displayStationDetails(stationInfo, arret) {
     document.getElementById("stations").style.display = "none"
     let stationNode = document.getElementById("stationDetails")
-    
     stationNode.hidden = false
-    stationNode.innerHTML = ""
-    
-    // TODO: Afficher les infos de stationInfo dans du html propre
-    let title = document.createElement("h2") // Créer un noeud <h2></h2>
-    title.innerText = stationInfo["fields"]["stop_name"]
-    
-    let coordinates = document.createElement("p") // Créer un noeud <p></p>
-    for (ligne of arret["ligne"]) {
-        coordinates.innerHTML += "<br/>"+ arret["libelle"] + " " +ligne["numLigne"]
-    }
-    
-    stationNode.appendChild(title)
-    stationNode.appendChild(coordinates)
 
+    document.getElementById("stationName").innerText = stationInfo["fields"]["stop_name"]
+    document.getElementById("stationsDetailsLignes").innerHTML = ""
+    for (let ligne of arret["ligne"]) {
+        let ligneNode = document.createElement("p") // Créer un noeud <p></p>
+        ligneNode.innerText = ligne["numLigne"]
+        document.getElementById("stationsDetailsLignes").appendChild(ligneNode)
+    }
+
+    let tpsDattentesNode = document.getElementById("stationsDetailsPassages")  // Créer un noeud <p></p>
+    tpsDattentesNode.innerHTML = ""
     let tpsDattentes = await fetchAPI("https://open.tan.fr/ewp/tempsattente.json/" + arret["codeLieu"])
     console.log(tpsDattentes)
-    
-    let tpsDattentesNode = document.createElement("p") // Créer un noeud <p></p>
+
+
+    let tpsDattenteContainer = document.createElement("div")
     tpsDattentes.forEach((tpsDattente) => {
         let detailAttenteNode = document.createElement("p")
-        detailAttenteNode.innerHTML = "Vers " + tpsDattente["terminus"] + ", ligne " + tpsDattente["ligne"]["numLigne"] + ", dans: " + tpsDattente["temps"]
-        let seeHorairesButton = document.createElement("button")
-        seeHorairesButton.innerHTML = `<a href="horaires.html?arret=${tpsDattente["arret"]["codeArret"]}&ligne=${tpsDattente["ligne"]["numLigne"]}&sens=${tpsDattente["sens"]}">voir les horaires à l'arrêt</a>`
-
-        tpsDattentesNode.appendChild(detailAttenteNode)
-        tpsDattentesNode.appendChild(seeHorairesButton)
+        detailAttenteNode.innerHTML = "Vers " + tpsDattente["terminus"] + ", ligne " + tpsDattente["ligne"]["numLigne"]
+        if (tpsDattente["temps"] != "") {
+            detailAttenteNode.innerHTML += ", dans: " + tpsDattente["temps"]
+        }
+        tpsDattenteContainer.appendChild(detailAttenteNode)
     })
+
+    let seeHorairesButtonContainer = document.createElement("div")
+    seeHorairesButtonContainer.style.display = "grid"
+    tpsDattentes.forEach((tpsDattente) => {
+        let seeHorairesButton = document.createElement("button")
+        seeHorairesButton.style.marginLeft = "24px"
+        seeHorairesButton.innerHTML = `<a href="horaires.html?arret=${tpsDattente["arret"]["codeArret"]}&ligne=${tpsDattente["ligne"]["numLigne"]}&sens=${tpsDattente["sens"]}">voir les horaires à l'arrêt</a>`
+        seeHorairesButtonContainer.appendChild(seeHorairesButton)
+    })
+
+    tpsDattentesNode.appendChild(tpsDattenteContainer)
+    tpsDattentesNode.appendChild(seeHorairesButtonContainer)
     stationNode.appendChild(tpsDattentesNode)
 }
 
@@ -95,24 +103,24 @@ async function displayWaitingTimeAt(station){
     console.log("Interaction avec " + station["libelle"])
     let tpsDattente = await fetchAPI("https://open.tan.fr/ewp/tempsattente.json/" + station["codeLieu"])
 
-    //affiche le temps d'attente + sens + terminus + numéro de la ligne dans la console de la station 
+    //affiche le temps d'attente + sens + terminus + numéro de la ligne dans la console de la station
     console.log(tpsDattente.map((element) => element["temps"]+ " sens " + element["terminus"] + " ligne " + element["ligne"]["numLigne"]))
 }
 
-//permet de faire une requête API avec la localisation reçue grâce à la fonction onAuthorize 
+//permet de faire une requête API avec la localisation reçue grâce à la fonction onAuthorize
 //et de retourner la liste des arrêts à proximité
 async function getStations(coords) {
 	let url = "https://open.tan.fr/ewp/arrets.json/" + coords.latitude + "/" + coords.longitude
-    console.log(url)    
+    console.log(url)
 
-    //contient la réponse en format .json 
+    //contient la réponse en format .json
 	const arrets = await fetchAPI(url)
     return arrets
 }
 
 // Actions faites au chargement de la page
 async function loadPage() {
-    // Initialisation de la map    
+    // Initialisation de la map
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -141,8 +149,8 @@ let geolocationOptions = {
     //donne une plus grande précision dans ta localisation
     enableHighAccuracy : true,
     //dit au navigateur de garder ta position durant un temps donné (ici, 0seconde)
-    maximumAge : 0 
+    maximumAge : 0
 }
 
 loadPage()
-//<qwsxsqqazzzzzzzzzzzzzzzzzzzzzzzsa participation de mon chat, Neo 
+//<qwsxsqqazzzzzzzzzzzzzzzzzzzzzzzsa participation de mon chat, Neo

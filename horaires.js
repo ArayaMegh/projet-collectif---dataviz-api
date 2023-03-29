@@ -18,16 +18,23 @@ function createHorairesTxtFrom(result) {
     // 1ere solution
     // Pour chaque horaire
     result["horaires"].forEach(horaire => {
-        // On créer un paragraph
-        let node = document.createElement("p")
+        let container = document.createElement("div")
 
         // On met l'heure en gras (% 24 car les heures >= 24 sont les heures du lendemain - 0h, 1h, ...)
         let heure = parseInt(horaire["heure"].replace(/\D/, "")) % 24 + "h"
-        let minutes = horaire["passages"].join(" | ")
-        node.innerHTML = "<b>" + heure + "</b> : " + minutes
-
+        let header = document.createElement("h3")
+        header.innerText = heure
+        
         // On ajoute le paragraph dans l'élement horairesText pour l'afficher
-        document.getElementById("horairesText").appendChild(node)
+        container.appendChild(header)
+
+        horaire["passages"].forEach(passage => {
+            let passageNode = document.createElement("p")
+            passageNode.innerText = passage
+            container.appendChild(passageNode)
+        })
+
+        document.getElementById("horairesTable").appendChild(container)
     })
 
     // 2ème solution
