@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="projet.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,29 +16,30 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
     crossorigin=""></script>
+    <script async src="https://app1.weatherwidget.org/js/?id=ww_fc9a33c4f1faa"></script>
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     
 </head>
 
 
 <body>
-
-<ul class = "menu">
-    <li><a href="service.html">services</a></li>
-    <li><a href="#">lignes</a></li>
-    <li><a href="horaires.html">horaires</a></li>
-    <li><a href="#">informations</a></li>
-    <div class="heure">
-        <span id="time"> 00 : 00 : 00</span>
-    </div> 
-</ul>
     <div class="pageBody">
+        <ul class = "menu">
+            <li><a href="service.html">services</a></li>
+            <li><a href="#">lignes</a></li>
+            <li><a href="horaires.html">horaires</a></li>
+            <li><a href="#">informations</a></li>
+            <div class="heure">
+                <span id="time"> 00 : 00 : 00</span>
+            </div> 
+        </ul>
         <div id="map"></div>  
-        <script src="Projet.js"></script>
-        <script src="script.js"></script> 
-        <p id="stations"></p>
+        <p id="stations" class="stations"></p>
         <p id="stationDetails" hidden></p>
     </div>
+    
+    <script src="Projet.js"></script>
+    <script src="script.js"></script> 
 </body>
 
 
@@ -59,7 +59,6 @@
             <a href="https://adatechschool.fr/"><img src="ada-tech-school.png" alt=" ada tech school" width="200" height="60"></a>
         </div>
     </div>
-    <script async src="https://app1.weatherwidget.org/js/?id=ww_fc9a33c4f1faa"></script>
 </footer>
 
 

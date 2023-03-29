@@ -56,7 +56,7 @@ function createArretNodeFrom(arret) {
 
 // Affiche le detail d'une station
 async function displayStationDetails(stationInfo, arret) {
-    document.getElementById("stations").hidden = true
+    document.getElementById("stations").style.display = "none"
     let stationNode = document.getElementById("stationDetails")
     
     stationNode.hidden = false

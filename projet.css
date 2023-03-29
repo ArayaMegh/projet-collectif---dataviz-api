@@ -2,19 +2,19 @@
     padding: 0;
     margin:0; 
 }
-/* html{
+html{
     height: 100%;
 }
 
 
- body{
+body{
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    background-color: beige; */
+    background-color: beige;
 
 
-h1
+h1 
 {
     font-family :'Helvetica',cursive ;
     background: bisque;
@@ -27,7 +27,6 @@ h1
     background-position: center;
     -webkit-background-clip: text ;
     background-clip: text;
-
 }
     
 
@@ -136,16 +135,16 @@ transition: 5s;
     display: block;
 }
 
-<<<<<<< HEAD
 footer{
     margin-top: auto;
-=======
+
 .pied{
     background-color: black;
     font-family :'Helvetica',cursive ;
     color: blanchedalmond;
     margin: auto;
 }
+
 .image{
 background-color: pink;
 font-weight: 800;
@@ -168,5 +167,4 @@ footer {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
->>>>>>> 567430dbcbb3342652e3239048c3ac6c2034bd4b
 }

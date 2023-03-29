@@ -15,7 +15,7 @@ html{
     padding: 1,5rem;
 } */
 
- body{
+body{
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -25,10 +25,8 @@ html{
 
 
 h1 
-{
-   
-    
-    famille-de-polices :'Caramel',cursive ;
+{   
+    font-family :'Helvetica',cursive ;
     text-align: center;
     margin-top: 200px;
     font-size: 150px;
@@ -37,32 +35,27 @@ h1
     background-image: url(https://media.giphy.com/media/33JKNObAnTaWbdH1Rk/giphy.gif);
     background-position: center;
     -webkit-background-clip: text ;
+    background-clip: text;
 
 }
-    
 
 .menu{
-  
     list-style:nome ;
-    align-self: auto;
     padding: 0;
     background: black;
-    width: 100;
-    max-width:1000px ;
+    width: 100%;
     margin: auto;
-    border-radius: 10px;
 
 }
+
 .menu li a {
     text-decoration: none;
     color: blanchedalmond;
     padding: 15px;
     display: block;
     border-radius: 30px;
-    
-
-
 }
+
 .menu li {
     display:inline-block;
     text-align: center;
@@ -71,8 +64,6 @@ h1
 .menu li a:hover {
     background: red ;
 }
-
-
 
 .container {
     position: absolute;
@@ -94,27 +85,26 @@ input {
     font-size: 20px;
     border: 1px solid red;
     transition: all .7s ease;
-    }
+}
 
-    ::placeholder{
+::placeholder{
     color:grey;
 }
 
 .btn {
-position: absolute;
-top: 0;
-right: 0;
-width: 60px;
-height: 60px;
-background:black;
-line-height: 60px;
-border-radius:30%;
-text-align: center;
-cursor: pointer;
-transition: 5s;
-
-
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background:black;
+    line-height: 60px;
+    border-radius:30%;
+    text-align: center;
+    cursor: pointer;
+    transition: 5s;
 }
+
 .btn i {
     font-size: 25px;
     color: beige;
@@ -136,14 +126,14 @@ transition: 5s;
     background: red;
 }
 
-.heu {
+.heure {
 
     float: right;
     text-align: right;
     padding: 10px;
     font-size: 25px;
     color: blanchedalmond ;
-    famille-de-polices :'Caramel',cursive ;
+    font-family :'Helvetica',cursive ;
     }
 
 
@@ -170,13 +160,17 @@ transition: 5s;
 
  footer{
     margin-top: auto;
-    padding: 50px;
+    width : 90%;
+    margin-left: auto;
+    margin-right: auto;
+    
  }
  
 .pied{
     background-color: black;
-    famille-de-polices :'Caramel',cursive ;
+    font-family :'Helvetica',cursive ;
     color: blanchedalmond;
+    text-align: center;
 }
 
 
@@ -186,27 +180,13 @@ background-color: pink;
 text-align: center;
 }
 
+.stations {
+    display: flex;
+}
 
-   
-
-
- 
-.station {
-    
-    
-    column-count: 4;
-    column-width: auto;
-    background-color: beige;
-    color: black;
-    list-style:nome ;
-    align-self: auto;
-    padding: 0;
-    width: 100;
-    max-width:1000px ;
-    margin: auto;
-    border-radius: 10px;
-    display: block;
-    text-align: right 50%;
+.stations > h3 {
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* .title{
@@ -226,11 +206,16 @@ text-align: center ;
 border-radius: 10px;
 } */
 
+#map { 
+    height: 400px; 
+    width: 100%;
+    display: block;
+}
 
 
 h2{
     background-color: green;
-    famille-de-polices :'Caramel',cursive ;
+    font-family:'Helvetica',cursive ;
     color: black;
     margin-top:auto;
     padding: auto;
@@ -247,4 +232,10 @@ h2{
     padding: auto;
 
     
+}
+
+.pageBody {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }

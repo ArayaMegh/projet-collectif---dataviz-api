@@ -13,67 +13,35 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
     crossorigin=""/>
-
 </head>
 <body>
-    <ul class = "menu">
-        <li><a href="service.html">service</a></li>
-        <li><a href="#">ligne</a></li>
-        <li><a href="#">horaire</a></li>
-        <li><a href="#">information</a></li>
-    
-    
-        <div class="heure">
-            <span id="time"> 00 : 00 : 00</span>
+    <div class="pageBody">
+        <ul class = "menu">
+            <li><a href="service.html">services</a></li>
+            <li><a href="#">lignes</a></li>
+            <li><a href="horaires.html">horaires</a></li>
+            <li><a href="#">informations</a></li>
+        
+        
+            <div class="heure">
+                <span id="time"> 00 : 00 : 00</span>
+            </div>
+        </ul>
+        <div class = " container ">
+            <input type = " text " placeholder= " vous allez ou ? ">
+            <div class="btn">
+                <i class =  "fa fa-search "></i> 
+            </div>
         </div>
-    </ul>
-
-<<<<<<< HEAD
-=======
-<ul class = "menu">
-    <li><a href="service.html">services</a></li>
-    <li><a href="#">lignes</a></li>
-    <li><a href="horaires.html">horaires</a></li>
-    <li><a href="#">informations</a></li>
-    <div class="heure">
-        <span id="time"> 00 : 00 : 00</span>
+        <h1> Travel time  </h1>
     </div>
-</ul>
->>>>>>> 567430dbcbb3342652e3239048c3ac6c2034bd4b
-
-    <div class = " container ">
-    <input type = " text " placeholder= " vous allez ou ? ">
-    <div class="btn">
-        <i class =  "fa fa-search "></i> 
-        </div>
-</div>
-
-<<<<<<< HEAD
-
-=======
-<script src="script.js"></script> 
-<script src="projet.js"></script>
->>>>>>> 567430dbcbb3342652e3239048c3ac6c2034bd4b
-
-
-
-    <!-- <p> être toujours informé à temps</p> -->
-    <h1> Travel time  </h1>
-    <!-- <p>de vos transports en commun</p>
-</div> --> 
-
-
-
     <script src="script.js"></script> 
-<!-- <script src="projet.js"></script> -->
-
-
 </body>
 
 
 <footer>
 
-
+    <div id="ww_fc9a33c4f1faa" v='1.3' loc='id' a='{"t":"ticker","lang":"fr","sl_lpl":1,"ids":["wl437"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#000000","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>Weather Data Source: <a href="https://meteolongue.com/" id="ww_fc9a33c4f1faa_u" target="_blank">25 jours previsions meteo</a></div>
     
     <div class="pied">
     <h3>APP DE TRANSPORT PUBLIC DE NANTES</h3>
@@ -91,5 +59,6 @@
         height="60"></a>
         </div>
     </div>
+    <script async src="https://app1.weatherwidget.org/js/?id=ww_fc9a33c4f1faa"></script>
 </footer>
 </html>
