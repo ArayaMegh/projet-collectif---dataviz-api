@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="projet.css">
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,44 +14,62 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
     crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
     crossorigin=""></script>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    
 </head>
+
+
 <body>
 
-<ul class = "menu">
-    <li><a href="service.html">service</a></li>
-    <li><a href="#">ligne</a></li>
-    <li><a href="#">horaire</a></li>
-    <li><a href="#">information</a></li>
-    
-    <div class="heure">
-        <span id="time"> 00 : 00 : 00</span>
-    </div> 
-</ul>
-    <div id="map"></div>
-    <p class="station" id="stations"></p>
-    <p class="stationF" id="stationDetails" hidden></p>
+    <ul class = "menu">
+        <li><a href="service.html">service</a></li>
+        <li><a href="#">ligne</a></li>
+        <li><a href="#">horaire</a></li>
+        <li><a href="#">information</a></li>
+
+        <div class="heure">
+            <span id="time"> 00 : 00 : 00</span>
+        </div> 
+    </ul>
+   
+
+   
+        
     <!--  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" 
     crossorigin=""></script>  -->
+      
+    <div id="map"></div>
     <script src="Projet.js"></script>
     <script src="script.js"></script>  
+    <p class="station" id="stations"></p>
+    <p class="stationF" id="stationDetails" hidden></p>
     
+
 </body>
 
+
 <footer>
+
+    <div id="ww_fc9a33c4f1faa" v='1.3' loc='id' a='{"t":"ticker","lang":"fr","sl_lpl":1,"ids":["wl437"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#000000","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>Weather Data Source: <a href="https://meteolongue.com/" id="ww_fc9a33c4f1faa_u" target="_blank">25 jours previsions meteo</a></div>
+   
     <div class="pied">
     <h3>APP DE TRANSPORT PUBLIC DE NANTES</h3>
     <p>realisée par:</p>
     <p>° Alissia</p>
     <p>° Meghan</p>
     <p>° Edward</p>
-    </div>
+  
+        
         <div class="image">
             <a href="https://adatechschool.fr/"><img src="ada-tech-school.png" alt=" ada tech school" width="200" height="60"></a>
         </div>
+    </div>
+    <script async src="https://app1.weatherwidget.org/js/?id=ww_fc9a33c4f1faa"></script>
 </footer>
+
+
 </html>

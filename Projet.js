@@ -18,10 +18,10 @@ async function onAuthorize(locationResult) {
     // boucle qui permet de parcourir le tableau "stations" et de sortir tous les arrêts
     // qui sont à proximité de l'utilisateur et de l'afficher sur html
     for (let arret of stations){
-        let stationInfo = allStations.find((element) => element["fields"]["stop_id"] == arret["codeLieu"])
+        let stationInfo = allStations.find((element) => areStationMatching(arret, element))
         console.log(stationInfo)
         L.marker(stationInfo["fields"]["stop_coordinates"])
-            .on('click', clickEvent => displayStationDetails(stationInfo, arret))
+            .on('click', (clickEvent) => displayStationDetails(stationInfo, arret))
             .addTo(map);
 
         // Creer le html contenant les infos de la station
@@ -29,6 +29,12 @@ async function onAuthorize(locationResult) {
         document.getElementById("stations").appendChild(arretNode)
     }
 
+}
+
+function areStationMatching(station, stationInfo) {
+    return stationInfo["fields"]["stop_id"] == station["codeLieu"] 
+        || stationInfo["fields"]["parent_station"] == station["codeLieu"] 
+        || stationInfo["fields"]["stop_name"] == station["libelle"]
 }
 
 // Creer et retourne du html contenant les infos de la station
@@ -49,23 +55,34 @@ function createArretNodeFrom(arret) {
 }
 
 // Affiche le detail d'une station
-function displayStationDetails(stationInfo, arret) {
+async function displayStationDetails(stationInfo, arret) {
     document.getElementById("stations").hidden = true
     let stationNode = document.getElementById("stationDetails")
     
     stationNode.hidden = false
     stationNode.innerHTML = ""
-    stationNode.appendChild(createArretNodeFrom(arret))
     
     // TODO: Afficher les infos de stationInfo dans du html propre
-    let title = document.createElement("h2")
+    let title = document.createElement("h2") // Créer un noeud <h2></h2>
     title.innerText = stationInfo["fields"]["stop_name"]
     
-    let coordinates = document.createElement("p")
-    coordinates.innerHTML = "<b>Coordinates</b>: " + stationInfo["fields"]["stop_coordinates"]
+    let coordinates = document.createElement("p") // Créer un noeud <p></p>
+    for (ligne of arret["ligne"]) {
+        coordinates.innerHTML += arret["libelle"] + ligne["numLigne"]
+    }
     
     stationNode.appendChild(title)
     stationNode.appendChild(coordinates)
+
+    let tpsDattentes = await fetchAPI("https://open.tan.fr/ewp/tempsattente.json/" + arret["codeLieu"])
+    console.log(tpsDattentes)
+    
+    let tpsDattentesNode = document.createElement("p") // Créer un noeud <p></p>
+    for (let tpsDattente of tpsDattentes) {
+        tpsDattentesNode.innerHTML += //tpsDattente["temps"]+ 
+        " sens " + tpsDattente["terminus"] + " ligne " + tpsDattente["ligne"]["numLigne"] + "<br/>"
+    }
+    stationNode.appendChild(tpsDattentesNode)
 }
 
 //permet de recevoir les données d'une station en particulier

@@ -19,9 +19,51 @@ setInterval(function () {
     seg = " 0" + seg;
     //on appelle le inner html avec te variable heu + min + seg
   }
+
+
+  // code de geolocalization pour la meteo 
   html.innerHTML = heu + " : " + min + " : " + seg;
 }, 1000);
 
+
+
+/* window.addEventListener("load",()=>{
+
+  let lon 
+  let lat 
+
+  let temperatureValeur
+
+  if (navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(position =>{
+      console.log(position.coords.latitude)
+
+      lon = position.coords.longitude
+      lat = position.coords.latitude
+
+       // ubication actuel
+     // const url = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={a9cfc5cad5f990b591cc43b343e639ba}"
+          //console.log(url);
+       
+       
+          //ubication par ville 
+      const url = "https://api.openweathermap.org/data/2.5/weather?q={nantes}&appid={a9cfc5cad5f990b591cc43b343e639ba}"
+          //console.log(url);
+          fetch(url)
+            .then(response => {return response.json()})
+            .then ( data => {
+              console.log(data.main.temp)
+              let temp = Math.round(data.main.temp)
+
+            })
+            .catch ( error => {
+              console.log(error)
+            })
+    })
+  }
+
+})
+ */
 
  // function map
 //  cree variable map . et appelle la librerie L.map que va importe le map 

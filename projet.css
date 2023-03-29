@@ -2,18 +2,24 @@
     padding: 0;
     margin:0; 
 }
-
-
-body{
-    background-color: beige;
+/* html{
+    height: 100%;
 }
+
+
+ body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: beige; */
+
 
 h1
 {
     font-family :'Helvetica',cursive ;
     background: bisque;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 250px;
     font-size: 150px;
     font-weight: 800;
     color: transparent;
@@ -29,7 +35,7 @@ h1
     list-style:nome ;
     padding: 0;
     background: black;
-    width: 90%;
+    width: 100%;
     margin: auto;
 
 }
@@ -123,11 +129,15 @@ transition: 5s;
     font-family: 'Helvetica',cursive ;
 
 }
-
+ 
 #map { 
     height: 400px; 
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+footer{
+    margin-top: auto;
 }

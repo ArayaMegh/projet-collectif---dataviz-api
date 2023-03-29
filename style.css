@@ -3,11 +3,26 @@
     margin:0; 
 }
 
-
-body{
-    background-color: beige;
-    position: relative;
+html{
+    height: 100%;
 }
+
+/* header{
+    min-height: 10vh;
+    display: flex;
+    align-items:center ;
+    margin:auto;
+    padding: 1,5rem;
+} */
+
+ body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: beige;
+} 
+    
+
 
 h1 
 {
@@ -104,7 +119,7 @@ transition: 5s;
     font-size: 25px;
     color: beige;
     line-height:65px;
-    transition: all .7s ease;
+    transition: all .5s ease;
 
 }
 .container:hover input {
@@ -113,7 +128,6 @@ transition: 5s;
 
 .container:hover i {
     transform:rotate(-360deg);
-    background: red;
     border-radius: 20%;
     height: 100%;
     height: 100%;
@@ -123,14 +137,13 @@ transition: 5s;
 }
 
 .heu {
-    border: 0;
-    padding: 10px ;
-    left:75%;
-    top: 0%;
+
+    float: right;
+    text-align: right;
+    padding: 10px;
     font-size: 25px;
     color: blanchedalmond ;
-    famille-de-polices: 'Caramel',cursive ;
-
+    famille-de-polices :'Caramel',cursive ;
     }
 
 /* #map{
@@ -162,29 +175,23 @@ transition: 5s;
     
 }
  */
+
+ footer{
+    margin-top: auto;
+    padding: 50px;
+ }
+ 
 .pied{
     background-color: black;
     famille-de-polices :'Caramel',cursive ;
     color: blanchedalmond;
-   
-
-    
-    
-
-    
-    
 }
 
 
 
 .image{
 background-color: pink;
-font-weight: 800;
 text-align: center;
-
-width: 100%;
-
-
 }
 
 
@@ -226,3 +233,26 @@ display: block;
 text-align: center ;
 border-radius: 10px;
 } */
+
+
+
+h2{
+    background-color: green;
+    famille-de-polices :'Caramel',cursive ;
+    color: black;
+    margin-top:auto;
+    padding: auto;
+    text-align: center;
+
+}
+
+.tram{
+    margin-top:10px ;
+    margin-left: 10px;
+    border-color: green;
+    border-style: inset;
+    background-color: white;
+    padding: auto;
+
+    
+}
