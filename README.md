@@ -2,6 +2,7 @@
 projet-collectif---dataviz-api-thebestgroup created by GitHub Classroom
 
 Projet collectif avec Alissia, Meghan et Edward pour l'école AdaTechSchool à Nantes.
+Fait au bout de 2 mois de formation.
 Nous avions 6 jours pour le faire.
 Promotion Doria Shafik, 2023-2024.
 
